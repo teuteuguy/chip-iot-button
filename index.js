@@ -39,7 +39,8 @@ button2.watch(function(err, value) {
     device.publish('chip_iotbutton/' + config.chipIoTMAC, JSON.stringify({
         "serialNumber": "7CC709B700F0",
         "batteryVoltage": "TODO",
-        "clickType": "SINGLE"
+        "clickType": "SINGLE",
+        "button": "2"
     }));
 });
 
