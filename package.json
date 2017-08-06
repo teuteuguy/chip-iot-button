@@ -1,0 +1,12 @@
+{
+  "name": "iotbutton",
+  "version": "1.0.0",
+  "description": "Sample CHIP code to get an IoT Button up and running.",
+  "main": "index.js",
+  "author": "teuteuguy",
+  "license": "ISC",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.0.1",
+    "chip-gpio": "^1.1.2"
+  }
+}

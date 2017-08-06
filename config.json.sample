@@ -1,0 +1,9 @@
+{
+  "iotCaPath": "path to the AWS root CA PEM",
+  "iotCertPath": "path to your PEM certificate",
+  "iotKeyPath": "path to your PEM private key",
+  "iotClientId": "the client id",
+  "iotEndpoint": "the IoT endpoint",
+  "iotRegion": "the IoT region you want to use",
+  "chipIoTMAC": "the MAC of the CHIP. We'll use this as the identifier"
+}

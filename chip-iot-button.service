@@ -1,0 +1,16 @@
+[Unit]
+Description=Chip IoT Button on boot
+After=network-online.target
+
+[Service]
+Restart=on-failure
+RestartSec=10s
+Environment="NODE_PATH=/usr/local/bin/node"
+Environment="HOME=/home/chip"
+WorkingDirectory=/home/chip/chip-iot-button
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/local/bin/node /home/pi/chip-iot-button/index.js
+
+[Install]
+WantedBy=multi-user.target
+
