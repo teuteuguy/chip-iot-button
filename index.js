@@ -24,11 +24,21 @@ var device = awsIot.device({
     host: config.iotEndpoint
 });
 
+var message = {
+    "serialNumber": "7CC709B700F0",
+    "batteryVoltage": "TODO",
+    "clickType": "SINGLE",
+    "button": "2"
+};
+var topic = 'chip_iotbutton/' + config.chipIoTMAC;
+
 button1.watch((err, value) => {
     if (err) {
         throw err;
     }
     console.log('Button 1 pressed', value);
+    message.button = 1;
+    device.publish(topic, JSON.stringify(message));
 });
 
 button2.watch(function(err, value) {
@@ -36,12 +46,8 @@ button2.watch(function(err, value) {
         throw err;
     }
     console.log('Button 2 pressed', value);
-    // device.publish('chip_iotbutton/' + config.chipIoTMAC, JSON.stringify({
-    //     "serialNumber": "7CC709B700F0",
-    //     "batteryVoltage": "TODO",
-    //     "clickType": "SINGLE",
-    //     "button": "2"
-    // }));
+    message.button = 2;
+    device.publish(topic, JSON.stringify(message));
 });
 
 button3.watch((err, value) => {
@@ -49,6 +55,8 @@ button3.watch((err, value) => {
         throw err;
     }
     console.log('Button 3 pressed', value);
+    message.button = 3;
+    device.publish(topic, JSON.stringify(message));
 });
 
 function exit() {
