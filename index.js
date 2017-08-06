@@ -68,3 +68,22 @@ function exit() {
 }
 
 process.on('SIGINT', exit);
+
+device.on('connect', function() {
+    console.log('IoT connected');
+});
+device.on('close', function() {
+    console.log('IoT close');
+});
+device.on('reconnect', function() {
+    console.log('IoT reconnect');
+});
+device.on('IoT offline', function() {
+    console.log('offline');
+});
+device.on('error', function(error) {
+    console.error('IoT error', error);
+});
+device.on('message', function(topic, payload) {
+    console.log('IoT message received', topic, payload.toString());
+});
