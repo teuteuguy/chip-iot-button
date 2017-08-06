@@ -15,14 +15,14 @@ var button3 = new Gpio(6, 'in', 'both', {
     debounceTimeout: 500
 });
 
-// var device = awsIot.device({
-//     keyPath: config.iotKeyPath,
-//     certPath: config.iotCertPath,
-//     caPath: config.iotCaPath,
-//     clientId: config.iotClientId,
-//     region: config.iotRegion,
-//     host: config.iotEndpoint
-// });
+var device = awsIot.device({
+    keyPath: config.iotKeyPath,
+    certPath: config.iotCertPath,
+    caPath: config.iotCaPath,
+    clientId: config.iotClientId,
+    region: config.iotRegion,
+    host: config.iotEndpoint
+});
 
 button1.watch((err, value) => {
     if (err) {
