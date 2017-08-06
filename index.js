@@ -31,6 +31,7 @@ var message = {
     "button": "2"
 };
 var topic = 'chip_iotbutton/' + config.chipIoTMAC;
+console.log(topic);
 
 button1.watch((err, value) => {
     if (err) {
